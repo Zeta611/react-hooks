@@ -2,10 +2,17 @@
 
 import * as React from "react";
 
-function Home(Props) {
-  return React.createElement("div", {
-              className: "font-semibold dark:text-white"
-            }, "Hello, World!");
+function Home(props) {
+  var match = React.useState(function () {
+        return 1;
+      });
+  var setA = match[1];
+  React.useEffect(function () {
+        setA(function (a) {
+              return a;
+            });
+      });
+  return String(match[0]);
 }
 
 var make = Home;
